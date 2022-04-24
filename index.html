@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <script>
+         window.location = "#";
+      </script>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+         @import url("https://use.typekit.net/jmk3xov.css");
+         canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+         }
+         :root {
+            --dark-bg: rgba(15, 15, 15, 0.95);
+            --spacing: 350px;
+            font-family: brandon-grotesque, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+         }
+         main {
+            width: 100vw;
+            color: white;
+            z-index: 99;
+            position: absolute;
+            width: 100%;
+            margin: 0px auto;
+            padding: 120px 0px;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+         }
+         h1,
+         h2,
+         h3,
+         blockquote {
+            font-family: elevon, sans-serif;
+            font-weight: 700;
+            font-style: normal;
+         }
+         canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+         }
+         header {
+            background: var(--dark-bg);
+            grid-column: 2 / span 5;
+            font-size: 2.5rem;
+            padding: 2rem;
+            margin-bottom: var(--spacing);
+         }
+
+         section {
+            grid-column: 2 / 8;
+            padding: 1rem;
+            background: var(--dark-bg);
+            font-size: 1.25rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing);
+         }
+         blockquote {
+            margin: 0;
+            padding: 0;
+            grid-column: 2 / span 9;
+            margin-bottom: var(--spacing);
+         }
+         blockquote p {
+            color: black;
+            background-color: white;
+            font-size: 4rem;
+            display: inline;
+            line-height: 1;
+         }
+         .left {
+            grid-column: 6 / 12;
+         }
+         .stop {
+            color: red;
+         }
+         .yield {
+            color: yellow;
+         }
+         .go {
+            color: green;
+         }
+         .cursor {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: var(--width);
+            height: var(--height);
+            transform: translate(calc(var(--x) - var(--width) / 2), calc(var(--y) - var(--height) / 2));
+            transition-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+            transition-property: width, height, transform;
+            transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
+            z-index: 99999;
+            pointer-events: none;
+            will-change: transform;
+         }
+         @media (pointer: fine) {
+            .cursor {
+               display: block;
+            }
+         }
+         .cursor::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: var(--radius);
+            border: 3px solid #21cf7a;
+            opacity: var(--scale);
+            -webkit-transform: scale(var(--scale));
+            transform: scale(var(--scale));
+            transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1), 300ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
+         }
+
+         html:not(html:hover) .cursor::after {
+            opacity: 0;
+            transform: scale(0);
+         }
+         html {
+            cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='%23eee' r='4'/%3E%3C/svg%3E") 3 3, auto;
+         }
+         .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            background: none;
+            border-radius: 50%;
+         }
+         .btn {
+            appearance: none;
+            border: none;
+            color: #eee;
+            cursor: inherit;
+            margin: -0.125rem -0.375rem;
+            padding: 0.125rem 0.375rem;
+            background: none;
+            border-radius: 0.25rem;
+            text-decoration-line: underline;
+            text-decoration-style: dotted;
+         }
+         .btn:hover {
+            text-decoration-line: none;
+         }
+      </style>
+      <title>Dheirya Tyagi</title>
+   </head>
+   <body>
+      <canvas id="bg"></canvas>
+      <div class="cursor"></div>
+      <main>
+         <header>
+            <h1>Dheirya Tyagi</h1>
+            <p>🚀 Welcome to my web portfolio!</p>
+            <i style="font-size: 25px;" class="btn" onclick="window.open('https://youtu.be/e2qG5uwDCW4','_blank')">♫&nbsp;&nbsp;Music ~ Jack Stauber - Buttercup</i>
+         </header>
+         <blockquote>
+            <p>Donuts are tasty!</p>
+         </blockquote>
+         <section>
+            <h2 id="aboutme">📜 About Me</h2>
+            <p>
+               Hi! I'm Dheirya Tyagi! I'm a...
+            </p>
+            <ul>
+               <li>13-year-old</li>
+               <li>in New Jersey</li>
+               <li>who likes to do stuff...</li>
+            </ul>
+            <p>
+               Wait... what stuff? Well I like to...
+            </p>
+            <ul>
+               <li>Swim, Tennis, Fool around w/ friends</li>
+               <li>Program Stuff In:</li>
+               <li style="list-style-type: none;">
+                  <ul>
+                     <li>HTML, CSS, JS (Plain!)</li>
+                     <li>Python (Django! & RPI!)</li>
+                     <li>C++ (Arduino!)</li>
+                     <li>Nginx (Webservers!)</li>
+                  </ul>
+               </li>
+               <li>Math, Writing</li>
+               <li>Draw, Build things w/ my hands</li>
+               <li>Mess around on the internet</li>
+            </ul>
+            <p>
+               I've also made a lot of cool stuff, scroll down below for more!
+            </p>
+         </section>
+         <blockquote>
+            <p>Memes are funi!</p>
+         </blockquote>
+         <section class="light">
+            <h2 id="projects">👩🏽‍🚀 Projects</h2>
+            <p>
+               I've made a lot of things, but some highlights include:
+            </p>
+            <ul>
+               <li><b>✨ Social Rumbles Social Media - </b><i class="btn" onclick="window.open('https://socialrumbles.com/home/','_blank')">https://socialrumbles.com/home/</i></li>
+               <li>Wordle Answers, Past, Present, & Future - <i class="btn" onclick="window.open('https://wordle-answers.vercel.app','_blank')">https://wordle-answers.vercel.app</i></li>
+               <li>AI Text & Image Generator - <i class="btn" onclick="window.open('https://webai.vercel.app','_blank')">https://webai.vercel.app</i></li>
+               <li>Youtube and Twitter Unblocker - <i class="btn" onclick="window.open('https://socialunblock.herokuapp.com','_blank')">https://socialunblock.herokuapp.com</i></li>
+               <li>3D Games & 2D Games - <i class="btn" onclick="window.open('https://socialrumbles.com/games/','_blank')">https://socialrumbles.com/games/</i></li>
+               <li>LGBTQ+ Discrimination Site - <i class="btn" onclick="window.open('https://dheirya.github.io/LGBTQ_Discrimination_Project/main/','_blank')">https://dheirya.github.io/LGBTQ_Discrimination_Project/main/</i></li>
+               <li>Covid-19 Vaccine Finder Site <span class="stop">[Archived]</span> - <i class="btn" onclick="window.open('https://vaccine4u.info','_blank')">https://vaccine4u.info</i></li>
+               <li>Retro Games <span class="stop">[Archived]</span> - <i class="btn" onclick="window.open('http://kidsgamez.com/uvread/','_blank')">http://kidsgamez.com/uvread/</i></li>
+            </ul>
+         </section>
+         <blockquote>
+            <p>I'm causing the <b>World</b> to spin the other way</p>
+         </blockquote>
+         <section class="left">
+            <h2 id="links">🔗 My Links</h2>
+            <p>Some of my socials and other links:</p>
+            <ul>
+               <li>
+                  <b>✨ Social Rumbles <span class="go">[Most Active]</span> - </b><i>https://socialrumbles.com/@Dheirya_Tyagi_CEO</i>
+               </li>
+               <li>Github <span class="go">[Often]</span> - <i class="btn" onclick="window.open('https://github.com/Dheirya','_blank')">https://github.com/Dheirya</i></li>
+               <li>Replit <span class="stop">[Abandoned]</span> - <i class="btn" onclick="window.open('https://replit.com/@RedMan2Man','_blank')">https://replit.com/@RedMan2Man</i></li>
+               <li>Stackoverflow <span class="stop">[Abandoned]</span> - <i class="btn" onclick="window.open('https://stackoverflow.com/users/14814478/john-doe','_blank')">https://stackoverflow.com/users/14814478/john-doe</i></li>
+               <li>Twitter <span class="yield">[Sometimes]</span> - <i class="btn" onclick="window.open('https://twitter.com/fellow_doge','_blank')">https://twitter.com/fellow_doge</i></li>
+               <li>Youtube <span class="yield">[Sometimes]</span> - <i class="btn" onclick="window.open('https://youtube.com/channel/UCDRExScvxFo57wMpXudTHjA','_blank')">https://youtube.com/channel/UCDRExScvxFo57wMpXudTHjA</i></li>
+               <li>Instagram <span class="stop">[Rarely]</span> - <i class="btn" onclick="window.open('https://instagram.com/archernoctum','_blank')">https://instagram.com/archernoctum</i></li>
+               <li>Tiktok <span class="stop">[Rarely]</span> - <i class="btn" onclick="window.open('https://tiktok.com/@socialrumbles','_blank')">https://tiktok.com/@socialrumbles</i></li>
+               <li>Medium <span class="stop">[Rarely]</span> - <i class="btn" onclick="window.open('https://dheirya.medium.com','_blank')">https://dheirya.medium.com</i></li>
+            </ul>
+         </section>
+         <blockquote>
+            <p>Thanks for watching!</p>
+         </blockquote>
+      </main>
+      <script>
+         window.location = "#";
+         const updateProperties = (elem, state) => {
+            elem.style.setProperty("--x", `${state.x}px`);
+            elem.style.setProperty("--y", `${state.y}px`);
+            elem.style.setProperty("--width", `${state.width}px`);
+            elem.style.setProperty("--height", `${state.height}px`);
+            elem.style.setProperty("--radius", state.radius);
+            elem.style.setProperty("--scale", state.scale);
+         };
+         document.querySelectorAll(".cursor").forEach((cursor) => {
+            let onElement;
+            const createState = (e) => {
+               const defaultState = {
+                  x: e.clientX,
+                  y: e.clientY,
+                  width: 40,
+                  height: 40,
+                  radius: "50%",
+               };
+               const computedState = {};
+               if (onElement != null) {
+                  const { top, left, width, height } = onElement.getBoundingClientRect();
+                  const radius = window.getComputedStyle(onElement).borderTopLeftRadius;
+                  computedState.x = left + width / 2;
+                  computedState.y = top + height / 2;
+                  computedState.width = width;
+                  computedState.height = height;
+                  computedState.radius = radius;
+               }
+               return {
+                  ...defaultState,
+                  ...computedState,
+               };
+            };
+            document.addEventListener("mousemove", (e) => {
+               const state = createState(e);
+               updateProperties(cursor, state);
+            });
+            document.querySelectorAll("a, button").forEach((elem) => {
+               elem.addEventListener("mouseenter", () => (onElement = elem));
+               elem.addEventListener("mouseleave", () => (onElement = undefined));
+            });
+         });
+      </script>
+      <script type="module">
+         import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js";
+         var pretextureLoader = new THREE.TextureLoader();
+         var earthtexture = pretextureLoader.load("earth.jpg");
+         var bumptexture = pretextureLoader.load("bumps.jpg");
+         var watertexture = pretextureLoader.load("water.png");
+         var scene = new THREE.Scene();
+         var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+         var renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector("#bg"),
+         });
+         renderer.setPixelRatio(window.devicePixelRatio);
+         renderer.setSize(window.innerWidth, window.innerHeight);
+         camera.position.setZ(30);
+         camera.position.setX(-3);
+         renderer.render(scene, camera);
+         const listener = new THREE.AudioListener();
+         camera.add(listener);
+         const sound = new THREE.Audio(listener);
+         const audioLoader = new THREE.AudioLoader();
+         audioLoader.load("Buttercup.mp3", function (buffer) {
+            sound.setBuffer(buffer);
+            sound.setLoop(true);
+            sound.setVolume(0.99);
+            sound.play();
+         });
+         var geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+         var material = new THREE.MeshStandardMaterial({
+            color: 0xff6347,
+         });
+         var monetexture = new THREE.TextureLoader().load("https://res.cloudinary.com/dpoer5oaq/image/upload/q_100/v1647701691/donut_eqtha0.jpg");
+         var normalTexture = new THREE.TextureLoader().load("https://res.cloudinary.com/dpoer5oaq/image/upload/q_100/v1647702756/normal_tfxa1h.jpg");
+         var torus = new THREE.Mesh(
+            geometry,
+            new THREE.MeshStandardMaterial({
+               map: monetexture,
+               normalMap: normalTexture,
+               roughness: 0.0,
+               metalness: 0.05,
+            })
+         );
+         scene.add(torus);
+         var geometry = new THREE.CylinderGeometry(1, 1.7 * 3, 1.7 * 3, 3);
+         var obamaTexture = new THREE.TextureLoader().load("https://res.cloudinary.com/stormco/image/fetch/https://i.redd.it/vmbyuwcnw0y51.png", function (texture) {
+            texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
+            texture.offset.set(0.4, 0);
+            texture.repeat.set(1.21, 0.99);
+         });
+         var material = new THREE.MeshBasicMaterial(
+            new THREE.MeshBasicMaterial({
+               map: obamaTexture,
+            })
+         );
+         var pyramid = new THREE.Mesh(geometry, material);
+         scene.add(pyramid);
+         pyramid.position.setX(-15);
+         pyramid.position.setZ(15);
+         pyramid.rotateY(77.6);
+         pyramid.position.setY(-3);
+         var pointLight = new THREE.PointLight(0xffffff);
+         pointLight.position.set(5, 5, 5);
+         var ambientLight = new THREE.AmbientLight(0xffffff);
+         scene.add(pointLight, ambientLight);
+         function addStar() {
+            var geometry = new THREE.SphereGeometry(0.25, 24, 24);
+            var material = new THREE.MeshStandardMaterial({
+               color: 0xffffff,
+            });
+            var star = new THREE.Mesh(geometry, material);
+            var [x, y, z] = Array(3)
+               .fill()
+               .map(() => THREE.MathUtils.randFloatSpread(150));
+            star.position.set(x, y, z);
+            scene.add(star);
+         }
+         Array(350).fill().forEach(addStar);
+         var spaceTexture = new THREE.TextureLoader().load("https://res.cloudinary.com/dpoer5oaq/image/upload/q_100/v1647702701/space_ku1rfs.jpg");
+         scene.background = spaceTexture;
+         var jeffTexture = new THREE.TextureLoader().load("https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,q_100,w_600/v1647702160/1_0__2dIeCDydwm6m_tK7teQ_qzcai2.jpg");
+         var jeff = new THREE.Mesh(
+            new THREE.BoxGeometry(3, 3, 3),
+            new THREE.MeshBasicMaterial({
+               map: jeffTexture,
+            })
+         );
+         scene.add(jeff);
+         var jeffTexture = new THREE.TextureLoader().load("https://res.cloudinary.com/stormco/image/fetch/https://indianmemetemplates.com/wp-content/uploads/troll-face.jpg");
+         var dice = new THREE.Mesh(
+            new THREE.BoxGeometry(3, 3, 3),
+            new THREE.MeshBasicMaterial({
+               map: jeffTexture,
+            })
+         );
+         scene.add(dice);
+         dice.position.setX(-15);
+         dice.position.setZ(15);
+         dice.position.setY(6);
+         var moon = new THREE.Mesh(
+            new THREE.SphereGeometry(5, 32, 32),
+            new THREE.MeshPhongMaterial({
+               map: earthtexture,
+               bumpMap: bumptexture,
+               bumpScale: 0.2,
+               specularMap: watertexture,
+               specular: new THREE.Color("grey"),
+            })
+         );
+         scene.add(moon);
+         moon.rotateX(271);
+         moon.rotateY(90);
+         moon.position.z = 30;
+         moon.position.setX(-10);
+         jeff.position.z = -5;
+         jeff.position.x = 2;
+         var geometry = new THREE.ConeGeometry(5, 20, 32);
+         var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+         var conetexture = new THREE.TextureLoader().load("https://res.cloudinary.com/stormco/image/fetch/https://cdna.artstation.com/p/assets/images/images/015/221/370/medium/jordan-holbrook-traffic-cone-seamless.jpg?1547548751");
+         var material = new THREE.MeshBasicMaterial(
+            new THREE.MeshBasicMaterial({
+               map: conetexture,
+            })
+         );
+         var cone = new THREE.Mesh(geometry, material);
+         scene.add(cone);
+         cone.position.setX(-25);
+         cone.position.setZ(39);
+         cone.rotateX(25.3);
+         cone.rotateZ(25.3);
+         function moveCamera() {
+            var t = document.body.getBoundingClientRect().top;
+            camera.position.z = t * -0.01;
+            camera.position.x = t * -0.0002;
+            camera.rotation.y = t * -0.0002;
+         }
+         document.body.onscroll = moveCamera;
+         moveCamera();
+         function animate() {
+            requestAnimationFrame(animate);
+            torus.rotation.x += 0.01;
+            torus.rotation.y += 0.005;
+            torus.rotation.z += 0.01;
+            moon.rotation.y += 0.009;
+            renderer.render(scene, camera);
+            jeff.rotation.y += 0.01;
+            jeff.rotation.z += 0.01;
+            dice.rotation.x += 0.01;
+            dice.rotation.z += 0.01;
+         }
+         animate();
+      </script>
+   </body>
+</html>
