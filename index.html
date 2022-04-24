@@ -2,10 +2,41 @@
 <html lang="en">
    <head>
       <script>
-         window.location = "#";
+         if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            window.location.replace("mobile.html");
+         }else{
+            window.location = "#";
+         }
       </script>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_57,w_57/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_114,w_114/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_72,w_72/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_144,w_144/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="60x60" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_60,w_60/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_120,w_120/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_76,w_76/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_152,w_152/v1618617714/unnamed-2_jtb947.jpg" />
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_196,w_196/v1618617714/unnamed-2_jtb947.jpg" sizes="196x196" />
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_96,w_96/v1618617714/unnamed-2_jtb947.jpg" sizes="96x96" />
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_32,w_32/v1618617714/unnamed-2_jtb947.jpg" sizes="32x32" />
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_16,w_16/v1618617714/unnamed-2_jtb947.jpg" sizes="16x16" />
+      <link rel="icon" type="image/png" href="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_128,w_128/v1618617714/unnamed-2_jtb947.jpg" sizes="128x128" />
+      <meta name="application-name" content="About Dheirya Tyagi | Dheirya Tyagi Sites" />
+      <meta name="msapplication-TileColor" content="#ff0000" />
+      <meta name="msapplication-TileImage" content="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_144,w_144/v1618617714/unnamed-2_jtb947.jpg" />
+      <meta name="msapplication-square70x70logo" content="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_70,w_70/v1618617714/unnamed-2_jtb947.jpg" />
+      <meta name="msapplication-square150x150logo" content="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_150,w_150/v1618617714/unnamed-2_jtb947.jpg" />
+      <meta name="msapplication-wide310x150logo" content="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_150,w_310/v1618617714/unnamed-2_jtb947.jpg" />
+      <meta name="msapplication-square310x310logo" content="https://res.cloudinary.com/dpoer5oaq/image/upload/c_scale,h_310,w_310/v1618617714/unnamed-2_jtb947.jpg" />
+      <meta name="title" content="About Dheirya Tyagi" />
+      <meta name="description" content="Dheirya Tyagi is a kid programmer who has made many sites. Learn all about him here!" />
+      <meta name="keywords" content="dheirya tyagi, dheirya, tyagi, about dheirya tyagi, about dheirya, about tyagi, about dheirya tyagi, kid programmer" />
+      <meta name="robots" content="index, follow" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="author" content="Dheirya Tyagi" />
+      <title>About Dheirya Tyagi</title>
       <style>
          @import url("https://use.typekit.net/jmk3xov.css");
          canvas {
@@ -119,7 +150,6 @@
             transform: scale(var(--scale));
             transition: 300ms opacity cubic-bezier(0.39, 0.575, 0.565, 1), 300ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
          }
-
          html:not(html:hover) .cursor::after {
             opacity: 0;
             transform: scale(0);
@@ -152,7 +182,6 @@
             text-decoration-line: none;
          }
       </style>
-      <title>Dheirya Tyagi</title>
    </head>
    <body>
       <canvas id="bg"></canvas>
@@ -286,6 +315,7 @@
             });
          });
       </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
       <script type="module">
          import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js";
          var pretextureLoader = new THREE.TextureLoader();
@@ -312,6 +342,9 @@
             sound.setVolume(0.99);
             sound.play();
          });
+         function reset() {
+            sound.play();
+         }
          var geometry = new THREE.TorusGeometry(10, 3, 16, 100);
          var material = new THREE.MeshStandardMaterial({
             color: 0xff6347,
@@ -435,6 +468,24 @@
             dice.rotation.z += 0.01;
          }
          animate();
+         $(this).mousedown(function () {
+            reset();
+         });
+         $(this).mousemove(function () {
+            reset();
+         });
+         $(this).scroll(function () {
+            reset();
+         });
+         $(this).mouseup(function () {
+            reset();
+         });
+         $(this).click(function () {
+            reset();
+         });
+         $(this).keypress(function () {
+            reset();
+         });
       </script>
    </body>
 </html>
