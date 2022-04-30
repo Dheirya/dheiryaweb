@@ -383,11 +383,11 @@
          pointLight.position.set(5, 5, 5);
          var ambientLight = new THREE.AmbientLight(0xffffff);
          scene.add(pointLight, ambientLight);
+         var geometry = new THREE.SphereGeometry(0.25, 24, 24);
+         var material = new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+         });
          function addStar() {
-            var geometry = new THREE.SphereGeometry(0.25, 24, 24);
-            var material = new THREE.MeshStandardMaterial({
-               color: 0xffffff,
-            });
             var star = new THREE.Mesh(geometry, material);
             var [x, y, z] = Array(3)
                .fill()
