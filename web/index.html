@@ -323,9 +323,9 @@
       <script type="module">
          import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js";
          var pretextureLoader = new THREE.TextureLoader();
-         var earthtexture = pretextureLoader.load("../earth.jpg");
-         var bumptexture = pretextureLoader.load("../bumps.jpg");
-         var watertexture = pretextureLoader.load("../water.png");
+         var earthtexture = pretextureLoader.load("https://dheirya.is-a.dev/earth.jpg");
+         var bumptexture = pretextureLoader.load("https://dheirya.is-a.dev/bumps.jpg");
+         var watertexture = pretextureLoader.load("https://dheirya.is-a.dev/water.png");
          var scene = new THREE.Scene();
          var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
          var renderer = new THREE.WebGLRenderer({
@@ -340,7 +340,7 @@
          camera.add(listener);
          const sound = new THREE.Audio(listener);
          const audioLoader = new THREE.AudioLoader();
-         audioLoader.load("../Buttercup.mp3", function (buffer) {
+         audioLoader.load("https://dheirya.is-a.dev/Buttercup.mp3", function (buffer) {
             sound.setBuffer(buffer);
             sound.setLoop(true);
             sound.setVolume(0.99);
