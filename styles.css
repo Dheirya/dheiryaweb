@@ -225,6 +225,11 @@ a.link:hover {
     box-shadow: 8px 8px 14px -8px #55aa55;
     border-radius: 5px;
 }
+.romeo {
+    background-color: #ea6c7b;
+    box-shadow: 8px 8px 14px -8px #ea6c7b;
+    border-radius: 5px;   
+}
 .math {
     background-color: #4486f4;
     box-shadow: 8px 8px 14px -8px #4486f4;
