@@ -134,7 +134,7 @@ a:hover {
     transition: transform 0.3s ease;
 }
 .link:hover .arrow {
-    transform: translateX(50%);
+    transform: rotate(-45deg) translateX(50%);
 }
 .link:hover .image-float {
     transform: translateY(-5%);
@@ -265,6 +265,16 @@ a.link:hover {
     box-shadow: 8px 8px 14px -8px #ff571e;
     border-radius: 5px;
 }
+.talkgpt {
+    background-color: #000;
+    box-shadow: 8px 8px 14px -8px #000;
+    border-radius: 5px;
+}
+.dawaze {
+    background-color: #ccc;
+    box-shadow: 8px 8px 14px -8px #ccc;
+    border-radius: 5px;
+}
 .instagram {
     background-color: #c13584;
     box-shadow: 8px 8px 14px -8px #c13584;
@@ -293,6 +303,11 @@ a.link:hover {
 .youtube {
     background-color: #ff0000;
     box-shadow: 8px 8px 14px -8px #ff0000;
+    border-radius: 5px;
+}
+.rageplatformer {
+    background-color: #1da1f2;
+    box-shadow: 8px 8px 14px -8px #1da1f2;
     border-radius: 5px;
 }
 .headers {
