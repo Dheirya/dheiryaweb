@@ -240,6 +240,11 @@ a.link:hover {
     box-shadow: 8px 8px 14px -8px #211d71;
     border-radius: 5px;
 }
+.innokit {
+    background-color: #666699;
+    box-shadow: 8px 8px 14px -8px #666699;
+    border-radius: 5px;
+}
 .github {
     background-color: #211F1F;
     box-shadow: 8px 8px 14px -8px #211F1F;
@@ -273,6 +278,16 @@ a.link:hover {
 .dawaze {
     background-color: #ccc;
     box-shadow: 8px 8px 14px -8px #ccc;
+    border-radius: 5px;
+}
+.melo {
+    background-color: #4a5058;
+    box-shadow: 8px 8px 14px -8px #4a5058;
+    border-radius: 5px;
+}
+.port {
+    background-color: #79909c;
+    box-shadow: 8px 8px 14px -8px #79909c;
     border-radius: 5px;
 }
 .instagram {
